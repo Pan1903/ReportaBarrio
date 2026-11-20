@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reportar | ReportaBarrio</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <a id="logo" href="/">ReportaBarrio</a>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/reportar.html">Reportar</a>
+      <a href="/reportes">Reportes</a>
+      <a href="/estadisticas">Estadísticas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Reportar un problema</h1>
+      <form class="formulario" action="/reportes" method="POST">
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="categoria">Categoría</label>
+        <select id="categoria" name="categoria" required>
+          <option value="">Selecciona una categoría</option>
+          <option value="vias">Vías y huecos</option>
+          <option value="alumbrado">Alumbrado público</option>
+          <option value="residuos">Residuos y basuras</option>
+          <option value="agua">Agua y alcantarillado</option>
+          <option value="espacio">Espacio público y zonas verdes</option>
+          <option value="seguridad">Seguridad vial</option>
+        </select>
+
+        <label for="barrio">Barrio</label>
+        <select id="barrio" name="barrio" required>
+          <option value="">Selecciona un barrio</option>
+          <option value="Centro">Centro</option>
+          <option value="El Prado">El Prado</option>
+          <option value="Boston">Boston</option>
+          <option value="Alto Prado">Alto Prado</option>
+          <option value="Ciudad Jardín">Ciudad Jardín</option>
+          <option value="Rebolo">Rebolo</option>
+        </select>
+
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" rows="5" required></textarea>
+
+        <fieldset>
+          <legend>Urgencia</legend>
+          <label><input type="radio" name="urgencia" value="baja" required> Baja</label>
+          <label><input type="radio" name="urgencia" value="media"> Media</label>
+          <label><input type="radio" name="urgencia" value="alta"> Alta</label>
+        </fieldset>
+
+        <label for="contacto">Correo de contacto</label>
+        <input type="email" id="contacto" name="contacto" required>
+
+        <button type="submit">Enviar reporte</button>
+      </form>
+    </section>
+
+    <aside>
+      <p>Tu reporte quedará registrado con estado "Pendiente" y podrás verlo en la sección Reportes.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>ReportaBarrio · Proyecto de aula de Tecnologías Web · ODS 11</p>
+  </footer>
+</body>
+</html>
