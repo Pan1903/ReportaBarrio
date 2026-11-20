@@ -229,6 +229,10 @@ app.use((req, res) => {
   res.status(404).send(plantilla('Página no encontrada', contenido));
 });
 
-app.listen(PORT, () => {
-  console.log(`Servidor en http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Servidor en http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
